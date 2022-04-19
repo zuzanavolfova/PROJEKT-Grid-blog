@@ -36,25 +36,16 @@ blockquote {
 	--zelena: #a3cb38;
 	--limetka: #c4e538;
 }
-h1 {
-	color: var(--limetka);
-	font-size: 42px;
-	margin: 30px auto;
-}
+
 .meta {
 	color:#b2bec3;
 }
 
-.blog {
-	display: grid;
-	grid-template-columns: 1fr 4fr 2fr;
-	gap: 40px;
-	align-items: center;
-	justify-items: center;
-}
-
-header {
-	grid-column: 2/3;
+h1 {
+	color: var(--limetka);
+	font-size: 42px;
+	margin: 30px ;
+	text-align: left;
 }
 
 p {
@@ -75,6 +66,42 @@ h2 {
 	font-size: 12px;
 }
 
+.tip a {
+	color: var(--oranzova);
+}
+
+img {
+	width: 100%;
+	object-fit: cover;
+	margin: 0;
+}
+
+blockquote::before,
+blockquote::after {
+content: "";
+display: block;
+background-color: var(--limetka);
+width: 100px;
+height: 2px;
+margin: 10px auto;
+}
+
+footer a {
+	text-decoration: none;
+	color: var(--seda);
+}
+.blog {
+	display: grid;
+	grid-template-columns: 1fr 4fr 2fr;
+	gap: 40px;
+	align-items: center;
+	justify-items: left;
+}
+
+header {
+	grid-column: 2/3;
+}
+
 .tip-vlevo {
 	border-right: 2px solid var(--zluta);
 text-align: right;
@@ -87,36 +114,20 @@ text-align: right;
 	grid-column: 3/4;
 }
 
-.tip a {
-	color: var(--oranzova);
-}
-
 figure {
 	grid-column: 1 / span 3;
 	margin:0;
+	justify-self: center;
 }
 
 figcaption {
 	color: var(--seda);
 }
 
-img {
-	width: 100%;
-	object-fit: cover;
-}
-
 blockquote {
 	grid-column: 1 / span 3;
 	color: var(--seda);
-}
-blockquote::before,
-blockquote::after {
-content: "";
-display: block;
-background-color: var(--limetka);
-width: 100px;
-height: 2px;
-margin: 10px auto;
+	justify-self: center;
 }
 
 footer {
@@ -124,10 +135,6 @@ footer {
 	color: var(--seda);
 }
 
-footer a {
-	text-decoration: none;
-	color: var(--seda);
-}
 
 /*
 	Všimni si, jak jsou zde nadefinované barvy.
