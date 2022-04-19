@@ -1,0 +1,230 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html { box-sizing: border-box; }
+*, :after, :before { box-sizing: inherit; }
+
+
+body {
+	margin: 0;
+	padding: 30px;
+	font-family:  'Alice', serif;
+	font-size: 18px;
+	line-height: 1.5;
+	
+}
+
+h1, h2, h3 {
+	font-family: 'Kaushan Script', cursive;
+	font-weight: normal;
+	margin: 10px 0;
+	text-align: left;
+}
+
+blockquote {
+	font-family: 'Kaushan Script', cursive;
+}
+
+/* --------------------------------------------------- */
+
+/* barvy */
+:root {
+	--svetla: #edf3f5;
+	--seda: #b2bec3;
+	--tmava: #636e72;
+	--oranzova: #ee5a24;
+	--cervena: #ea2027;
+	--zluta: #f79f1f;
+	--zelena: #a3cb38;
+	--limetka: #c4e538;
+}
+
+.meta {
+	color:#b2bec3;
+}
+
+h1 {
+	color: var(--limetka);
+	font-size: 42px;
+	margin: 30px 0;
+	text-align: left;
+}
+
+p {
+	grid-column: 2/3;
+	margin: 0;
+}
+
+h2 {
+	grid-column: 2/3;
+	color: var(--limetka);
+	justify-self: left;
+}
+
+.tip {
+	background-color: var(--svetla);
+	color: var(--tmava);
+	padding: 10px;
+	font-size: 12px;
+}
+
+.tip a {
+	color: var(--oranzova);
+}
+
+img {
+	width: 100%;
+	object-fit: cover;
+	margin: 0;
+}
+
+blockquote::before,
+blockquote::after {
+content: "";
+display: block;
+background-color: var(--limetka);
+width: 100px;
+height: 2px;
+margin: 10px auto;
+}
+
+footer a {
+	text-decoration: none;
+	color: var(--seda);
+}
+
+.tip-vlevo,
+.tip-vpravo {
+	border-left: 2px solid var(--zluta);
+	margin: 10px auto;
+	display: flex ;
+}
+
+.tip-vlevo img {
+	width: 100px;
+	height: auto;
+	object-fit: cover;
+	margin-right: 10px;
+}
+
+.figure {
+	margin:0;
+}
+
+img {
+    width: 100%;
+height: auto;
+object-fit: cover;
+}
+
+figcaption {
+	color: var(--seda);
+	font-size: smaller;
+}
+
+blockquote {
+	color: var(--seda);
+	text-align: center;
+}
+
+footer {
+	color: var(--seda);
+	margin-top: 20px;
+}
+
+/* ------------------------------------------- */
+
+@media screen and (min-width: 1100px) {
+	.blog {
+        max-width: 1200px;
+		display: grid;
+		grid-template-columns: 1fr 4fr 2fr;
+		column-gap: 40px;
+		justify-items: left;
+	}
+
+	header {
+		grid-column: 2/3;
+	}
+
+	.tip-vlevo {
+		border-right: 2px solid var(--zluta);
+		border-left: none;
+		text-align: right;
+		grid-column: 1/2;
+		margin: 0;
+		display: flex;
+        flex-wrap: wrap;
+	}
+    .tip-vlevo img {
+        width: 100%;
+    }
+
+	.tip-vpravo {
+		border-left: 2px solid var(--zluta);
+		text-align: left;
+		grid-column: 3/4;
+		margin: 0;
+	}
+
+	figure {
+		grid-column: 1 / span 3;
+		justify-self: center;
+	}
+
+
+	blockquote {
+		grid-column: 1 / span 3;
+		justify-self: center;
+		margin: 20px 0;
+	}
+
+	footer {
+		grid-column: 2/3;
+		color: var(--seda);
+	}
+
+	h1 {
+		margin: 30px 0;
+	}
+	
+	h2 {
+		margin: 20px 0;
+	}
+.tip-vlevo img {
+	width: 100%;
+	margin: 5px;
+}
+}
+
+
+
+/*
+	Všimni si, jak jsou zde nadefinované barvy.
+	Potřebný kód barvy si odtamtud můžeš vyzobnout a použít
+	ve svém kódu, ale existuje i lepší způsob.
+
+  CSS custom properties, někdy také označované jako CSS
+	variables (CSS proměnné), je způsob, jak si	pojmenovat
+	nějakou hodnotu a potom ji v kódu opakovaně používat.
+	Často se používá právě pro barvy a další "nastavení".
+
+	Když si chci nějakou hodnotu nadefinovat, použiji zápis
+	--mujnazev: hodnota
+	Když chci, abych mohl hodnotu používat všude v CSS,
+	založím ji uvnitř selektoru :root, takže např.:
+	:root {
+		--mojebarva: #ff8800;
+	}
+
+	Chci-li potom dál v CSS hodnotu použít, stačí použít funkci var a v závorce název proměnné.Např.:
+	.odstavec {
+		color: var(--mojebarva);
+	}
+
+	Nemusím si tak pamatovat kódy barev nebo neustále v CSS jezdit nahoru a dolů, abych si je odněkud zkopíroval.
+
+	Více o CSS custom properties:
+	- https://www.w3schools.com/css/css3_variables.asp
+	- https://css-tricks.com/patterns-for-practical-css-custom-properties-use/
+	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
+*/
+
